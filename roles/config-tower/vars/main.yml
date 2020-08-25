@@ -8,14 +8,14 @@ user_name: admin
 password: r3dh4t1!
 ssh_cred_name: "Connect_to_workstation"
 user_cred_name: "cloud-user"
-user_cred_path: "/root/.ssh/openstack.pem"
+user_cred_path: "~/.ssh/openstack.pem"
 static_inventory_name: scm_inventory
 instance_group_name: osp
-workflow_template_name: cicd_workflow
+workflow: cicd_workflow
 job_template_name_osp_instances: "02_Provision QA Env"
 osp_instances_playbook: site-osp-instances.yml
 group_name: workstation
-host_name: workstation-{{osp_GUID}}.{{osp_DOMAIN}}
+host_name: workstation-bb2a.blue.osp.opentlc.com
 job_template_name_3tier_app: "04_3tier app deployment on QA Env"
 app_deploy_playbook: site-3tier-app.yml
 vault_name: yum_repo_vault
@@ -31,7 +31,7 @@ opentlc_cred_name: "Opentlc key"
 job_template_aws_ssh_keys: "08_Prod SSH keys three tier app"
 ec2_inventory_source: "03_06_Prod Three tier inventory source"
 aws_region_name: "{{ REGION_NAME }}"
-tag_filters: "tag:instance_filter=three-tier-app-{{ EMAIL }}"
+tag_filters: "tag:instance_filter=three-tier-app-nuria.delaude"
 scm_inventory_source: "SCM three tier inventory source"
 path_to_scm_inventory: scm_inventory
 aws_read_keys: "AWS Access Key"

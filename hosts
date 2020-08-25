@@ -1,0 +1,17 @@
+  
+[load_balancers]
+frontend
+
+[app_servers]
+app1 
+app2
+
+[database_servers]
+db
+
+[internal:children]
+load_balancers
+app_servers
+database_servers
+
+[internal:vars]
